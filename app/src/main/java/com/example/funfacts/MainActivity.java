@@ -7,15 +7,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
     //region declare view variables
     //
     private TextView factsTextView;
     private Button showFactsButton;
+    private FactBook factbook= new FactBook();
     //endregion
 
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -28,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+// the button was
+                //randmonly select a fact
+
+
+                // update a string with new fact.
+                factsTextView.setText(factbook.getFact());
 
             }
         };
