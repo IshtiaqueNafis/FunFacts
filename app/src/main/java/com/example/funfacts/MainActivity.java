@@ -5,15 +5,18 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     //region declare view variables
     //
+    public static final String tag = MainActivity.class.toString();
     private TextView factsTextView;
     private Button showFactsButton;
     private FactBook factbook = new FactBook();
@@ -49,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         showFactsButton.setOnClickListener(listener);
-
+        Log.d("test", tag);
+        Toast.makeText(this, "App starting", Toast.LENGTH_LONG).show();
     }
 }
