@@ -1,7 +1,9 @@
 package com.example.funfacts;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +16,9 @@ public class MainActivity extends AppCompatActivity {
     //
     private TextView factsTextView;
     private Button showFactsButton;
-    private FactBook factbook= new FactBook();
+    private FactBook factbook = new FactBook();
+    private ConstraintLayout layout;
+    private ColorWheel colorWheel = new ColorWheel();
     //endregion
 
 
@@ -27,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         //region Assigin views from thje layout to the corrosponding variables
         factsTextView = findViewById(R.id.factsTextView);
         showFactsButton = findViewById(R.id.showFact);
+        layout = findViewById(R.id.relativeLayout);
         //endregion
 
         View.OnClickListener listener = new View.OnClickListener() {
@@ -38,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
                 // update a string with new fact.
                 factsTextView.setText(factbook.getFact());
+                layout.setBackgroundColor(colorWheel.getColors());
+                showFactsButton.setTextColor(colorWheel.getColors());
 
             }
         };
